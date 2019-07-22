@@ -1,0 +1,25 @@
+diff --git a/libfixmath/Makefile b/libfixmath/Makefile
+index b284590..bd80714 100644
+--- a/libfixmath/Makefile
++++ b/libfixmath/Makefile
+@@ -4,12 +4,15 @@ LIB =
+ SRC = .
+ INC =
+ 
++CROSS ?=
++
+ #Compiler settings
+-CPP = gcc
+-CC = gcc
+-AS = gcc
+-LD = gcc
+-AR = ar
++CPP = $(CROSS)gcc
++CC = $(CROSS)gcc
++AS = $(CROSS)gcc
++LD = $(CROSS)gcc
++AR = $(CROSS)ar
++
+ CPP_FLAGS = -O2 $(INC) -Wall -Wextra -c
+ CC_FLAGS  = -O2 $(INC) -Wall -Wextra -c
+ AS_FLAGS  = $(CC_FLAGS) -D_ASSEMBLER_
